@@ -4,7 +4,6 @@ FROM instrumentisto/haraka
 WORKDIR /haraka
 
 RUN apk add --no-cache git python3 g++ make 
-ADD "https://github.com/bman46/haraka-plugin-accept-all.git" skipcache
 RUN git clone https://github.com/bman46/haraka-plugin-accept-all.git
 RUN cd /haraka && npm install ./haraka-plugin-accept-all
 RUN mkdir config && echo "accept-all" >> config/plugins

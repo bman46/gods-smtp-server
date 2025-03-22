@@ -1,5 +1,5 @@
 FROM node:18-alpine
-RUN apk add --no-cache git
+RUN apk add --no-cache git python3
 RUN npm install -g Haraka
 RUN haraka -i /haraka
 

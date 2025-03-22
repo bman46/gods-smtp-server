@@ -3,8 +3,9 @@ FROM instrumentisto/haraka
 # Set working directory
 WORKDIR /haraka
 
-COPY plugins /haraka/plugins
+RUN git clone https://github.com/bman46/haraka-plugin-accept-all.git
+RUN npm install haraka-plugin-accept-all
+
 COPY config /haraka/config
-COPY plugins/ok_response.js /haraka/plugins/ok_response.js
 
 CMD ["haraka", "-c", "/haraka"]
